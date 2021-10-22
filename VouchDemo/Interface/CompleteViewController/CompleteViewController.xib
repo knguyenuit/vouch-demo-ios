@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompleteViewController" customModule="VouchDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="backToHomeButton" destination="QiC-VE-mYh" id="ybr-Fg-ErD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_success" translatesAutoresizingMaskIntoConstraints="NO" id="dee-8y-DI2">
+                    <rect key="frame" x="143" y="359" width="128" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dee-8y-DI2" secondAttribute="height" multiplier="1:1" id="ZNs-5C-e16"/>
+                        <constraint firstAttribute="height" constant="128" id="i7O-cQ-f2r"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkout Success" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1O-61-2cY">
+                    <rect key="frame" x="103" y="537" width="208.5" height="29"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" name="primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please hold on while we redirect  you to the ticket home page." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5c-hh-kMd">
+                    <rect key="frame" x="30" y="606" width="354" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" name="primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiC-VE-mYh">
+                    <rect key="frame" x="132" y="679" width="150" height="35"/>
+                    <color key="backgroundColor" name="primary"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="BTb-r4-jCq"/>
+                        <constraint firstAttribute="width" constant="150" id="ZPe-NZ-hws"/>
+                    </constraints>
+                    <state key="normal" title="Back to Home">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="M5c-hh-kMd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="CzU-gC-f7t"/>
+                <constraint firstItem="K1O-61-2cY" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Fc1-v2-j5e"/>
+                <constraint firstItem="QiC-VE-mYh" firstAttribute="top" secondItem="M5c-hh-kMd" secondAttribute="bottom" constant="30" id="JV6-al-abH"/>
+                <constraint firstItem="QiC-VE-mYh" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Ja3-Cg-hZE"/>
+                <constraint firstItem="dee-8y-DI2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="NTl-Tn-WhS"/>
+                <constraint firstItem="M5c-hh-kMd" firstAttribute="top" secondItem="K1O-61-2cY" secondAttribute="bottom" constant="40" id="VYZ-ZN-lbc"/>
+                <constraint firstItem="M5c-hh-kMd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="cOI-0x-THh"/>
+                <constraint firstItem="K1O-61-2cY" firstAttribute="top" secondItem="dee-8y-DI2" secondAttribute="bottom" constant="50" id="h67-2L-IYV"/>
+                <constraint firstItem="dee-8y-DI2" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-30" id="tjC-vc-MbU"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="69"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_success" width="108" height="108"/>
+        <namedColor name="primary">
+            <color red="0.071000002324581146" green="0.19599999487400055" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

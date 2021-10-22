@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmRemoveCartAlert" customModule="VouchDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="Ldr-BT-idF" id="B1y-qZ-i6n"/>
+                <outlet property="contentView" destination="GV4-FG-nXc" id="iUW-OM-x8p"/>
+                <outlet property="removeButton" destination="Pxj-D7-8bR" id="8d7-gT-NIm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GV4-FG-nXc">
+                    <rect key="frame" x="50" y="378" width="314" height="150"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to remove this product?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRR-98-Yy9">
+                            <rect key="frame" x="20" y="20" width="274" height="36"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="N3O-UD-ZNq">
+                            <rect key="frame" x="20" y="86" width="274" height="34"/>
+                            <subviews>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pxj-D7-8bR">
+                                    <rect key="frame" x="0.0" y="0.0" width="124.5" height="34"/>
+                                    <color key="backgroundColor" name="second_primary"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <state key="normal" title="Remove">
+                                        <color key="titleColor" name="primary"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldr-BT-idF">
+                                    <rect key="frame" x="149.5" y="0.0" width="124.5" height="34"/>
+                                    <color key="backgroundColor" name="primary"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="d5j-p1-oP5"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="N3O-UD-ZNq" firstAttribute="top" secondItem="MRR-98-Yy9" secondAttribute="bottom" constant="30" id="NoN-pv-Ag1"/>
+                        <constraint firstItem="N3O-UD-ZNq" firstAttribute="centerX" secondItem="GV4-FG-nXc" secondAttribute="centerX" id="Uq8-GT-k53"/>
+                        <constraint firstAttribute="bottom" secondItem="N3O-UD-ZNq" secondAttribute="bottom" constant="30" id="W5c-3d-IZD"/>
+                        <constraint firstItem="MRR-98-Yy9" firstAttribute="top" secondItem="GV4-FG-nXc" secondAttribute="top" constant="20" id="dag-b7-91Y"/>
+                        <constraint firstItem="MRR-98-Yy9" firstAttribute="leading" secondItem="GV4-FG-nXc" secondAttribute="leading" constant="20" id="vJ4-gy-z9u"/>
+                        <constraint firstItem="N3O-UD-ZNq" firstAttribute="leading" secondItem="GV4-FG-nXc" secondAttribute="leading" constant="20" id="wo1-WW-T8T"/>
+                        <constraint firstItem="MRR-98-Yy9" firstAttribute="centerX" secondItem="GV4-FG-nXc" secondAttribute="centerX" id="yHC-ZS-T0o"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="GV4-FG-nXc" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="PA1-de-DAd"/>
+                <constraint firstItem="GV4-FG-nXc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="d6l-5V-SAv"/>
+                <constraint firstItem="GV4-FG-nXc" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="oCV-nX-O8Y"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="68.973214285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="primary">
+            <color red="0.071000002324581146" green="0.19599999487400055" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="second_primary">
+            <color red="0.90600001811981201" green="0.94900000095367432" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
