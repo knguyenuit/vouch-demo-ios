@@ -8,12 +8,17 @@
 import UIKit
 
 class TicketDetailViewController: BaseViewController {
+    
+    //MARK: Outlets
+    //--------------------
     @IBOutlet private weak var backButton: UIButton!
     @IBOutlet private weak var ticketTitleLabel: UILabel!
     @IBOutlet private weak var feeLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var addCartButton: UIButton!
     
+    //MARK: Properties
+    //--------------------
     private var viewModel: TicketDetailViewModel
     
     init(viewModel: TicketDetailViewModel) {
@@ -25,6 +30,8 @@ class TicketDetailViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: Life cycles
+    //--------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         bindingAction()
@@ -37,6 +44,8 @@ class TicketDetailViewController: BaseViewController {
         showBadge(withCount: CartDataDefault.cartBadge)
     }
     
+    //MARK: Functions
+    //--------------------
     private func loadData(ticket: Ticket) {
         ticketTitleLabel.text = ticket.title
         descriptionLabel.text = ticket.description
@@ -52,7 +61,8 @@ class TicketDetailViewController: BaseViewController {
     }
 }
 
-// Binding Data & Action
+//MARK: Binding Data & Action
+//--------------------
 extension TicketDetailViewController {
     private func bindingAction() {
         backButton.rx.tap.bind { [weak self] (_) in
@@ -77,7 +87,8 @@ extension TicketDetailViewController {
     }
 }
 
-// TicketCalendarPopup Delegate
+//MARK: TicketCalendarPopup Delegate
+//--------------------
 extension TicketDetailViewController: TicketCalendarPopupDelegate {
     func ticketCalendarSelect(dateSelected: String) {
         guard let category = viewModel.category else { return }
@@ -91,7 +102,8 @@ extension TicketDetailViewController: TicketCalendarPopupDelegate {
     }
 }
 
-// Add Cart Popup Delegate
+//MARK: Add Cart Popup Delegate
+//--------------------
 extension TicketDetailViewController: AddCartPopupDelegate {
     func addCartComplete() {
         showBadge(withCount: CartDataDefault.cartBadge)

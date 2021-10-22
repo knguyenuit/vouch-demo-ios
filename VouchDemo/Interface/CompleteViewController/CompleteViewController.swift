@@ -8,8 +8,13 @@
 import UIKit
 
 class CompleteViewController: BaseViewController {
+    
+    //MARK: Outlets
+    //--------------------
     @IBOutlet private weak var backToHomeButton: UIButton!
     
+    //MARK: Life cycles
+    //--------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         bindingAction()
@@ -26,7 +31,8 @@ class CompleteViewController: BaseViewController {
     }
 }
 
-// Binding Action
+//MARK: Binding Action
+//--------------------
 extension CompleteViewController {
     private func bindingAction() {
         backToHomeButton.rx.tap.bind(onNext: { [weak self] (_) in

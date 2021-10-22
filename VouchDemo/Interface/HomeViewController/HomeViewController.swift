@@ -1,9 +1,15 @@
 import UIKit
 
 class HomeViewController: BaseViewController {
+    
+    //MARK: Outlets
+    //--------------------
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var mainContentView: UIView!
     private var pageViewController: UIPageViewController!
+    
+    //MARK: Properties
+    //--------------------
     private var viewControllers: [UIViewController] = []
     private var categories: [Category] = []
     private var viewModel = HomeViewModel()
@@ -19,6 +25,8 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    //MARK: Life cycles
+    //--------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         configPageVC()
@@ -32,14 +40,16 @@ class HomeViewController: BaseViewController {
         showBadge(withCount: CartDataDefault.cartBadge)
     }
     
-    //Config CollectionView
+    //MARK: Functions
+    //--------------------
+    ///Config CollectionView
     private func configCollectionView() {
         collectionView.register(CategoryCollectionCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
     
-    //Config PageView
+    ///Config PageView
     private func configPageVC() {
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController.delegate = self
@@ -61,7 +71,8 @@ class HomeViewController: BaseViewController {
     }
 }
 
-// UICollectionView Datasource + Delegate
+//MARK: UICollectionView Datasource + Delegate
+//--------------------
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count
@@ -89,7 +100,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 }
 
-// PageViewController Delegate
+//MARK: PageViewController Delegate
+//--------------------
 extension HomeViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         if viewControllerCurrentIndex < viewControllers.count - 1 {
@@ -116,7 +128,8 @@ extension HomeViewController: UIPageViewControllerDelegate, UIPageViewController
     }
 }
 
-// BindingData
+//MARK: BindingData
+//--------------------
 extension HomeViewController {
     private func bindingData() {
         let input = HomeViewModel.Input(viewWillAppear: rx.viewWillAppear.mapToVoid().asObservable())
@@ -133,7 +146,8 @@ extension HomeViewController {
     }
 }
 
-// HomeContentViewController Delegate
+//MARK: HomeContentViewController Delegate
+//--------------------
 extension HomeViewController: HomeContentViewControllerDelegate {
     func didSelectTicket(_ ticket: Ticket, category: Category?) {
         let viewModel = TicketDetailViewModel(ticket: ticket, category: category)

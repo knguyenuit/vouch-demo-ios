@@ -8,14 +8,21 @@
 import UIKit
 
 class CartViewController: BaseViewController {
+    
+    //MARK: Outlets
+    //--------------------
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var totalFeeLabel: UILabel!
     @IBOutlet private weak var confirmButton: UIButton!
     @IBOutlet private weak var backButton: UIButton!
     
+    //MARK: Properties
+    //--------------------
     private var viewModel = CartViewModel()
     private var carts: [CartData] = []
     
+    //MARK: Life cycles
+    //--------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
@@ -33,6 +40,8 @@ class CartViewController: BaseViewController {
         setNavigation(isHidden: false, hidesBackButton: false)
     }
     
+    //MARK: Functions
+    //--------------------
     private func configTableView() {
         tableView.register(CartTableCell.self)
         tableView.separatorStyle = .none
@@ -40,7 +49,7 @@ class CartViewController: BaseViewController {
         tableView.delegate = self
     }
     
-    // Show total fee
+    /// Show total fee
     private func showTotalFee() {
         var total: Int = 0
         carts.forEach { (cart) in
@@ -49,7 +58,7 @@ class CartViewController: BaseViewController {
         totalFeeLabel.text = "$ \(total)"
     }
     
-    // Add Header Section
+    /// Add Header Section
     private func setupViewSection(titleText: String?) -> UIView {
         let headerSection = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44))
 
@@ -80,7 +89,8 @@ class CartViewController: BaseViewController {
     }
 }
 
-// Binding Data
+//MARK: Binding Data
+//--------------------
 extension CartViewController {
     private func bindingData() {
         let input = CartViewModel.Input(viewWillAppear: rx.viewWillAppear.mapToVoid().asObservable())
@@ -107,7 +117,8 @@ extension CartViewController {
     }
 }
 
-// UITableView Datasource + Delegate
+//MARK: UITableView Datasource + Delegate
+//--------------------
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     
     // Config Section
@@ -143,7 +154,8 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-// Cart Cell Delegate
+//MARK: Cart Cell Delegate
+//--------------------
 extension CartViewController: CartTableCellDelegate {
     func cartDecreaseTapped(cart: Cart?, cell: CartTableCell) {
         guard let cart = cart,
