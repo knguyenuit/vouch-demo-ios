@@ -21,5 +21,6 @@
 7. Add badge number in Cart icon
 
 ### Architecture ###
-1. MVVM design pattern.
-2. RxSwift
+1. Following [Clean Architecture](https://github.com/sergdort/CleanArchitectureRxSwift).
+2. MVVM design pattern.
+3. RxSwift
