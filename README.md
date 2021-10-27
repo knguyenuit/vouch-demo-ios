@@ -18,6 +18,7 @@
 4. Add ticket number in Cart
 5. Save List Cart and update ticket in List Cart
 6. Submit list ticket order
+7. Add badge number in Cart icon
 
 ### Architecture ###
 1. MVVM design pattern.
