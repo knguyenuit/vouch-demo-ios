@@ -11,6 +11,14 @@
 4. open VouchDemo.xcworkspace
 5. Build & run.
 
+### Functionalities ###
+1. Show list categories and load tickets from category id
+2. Ticket detail load ticket info from API
+3. Choose date visit ticket
+4. Add ticket number in Cart
+5. Save List Cart and update ticket in List Cart
+6. Submit list ticket order
+
 ### Architecture ###
 1. MVVM design pattern.
 2. RxSwift
